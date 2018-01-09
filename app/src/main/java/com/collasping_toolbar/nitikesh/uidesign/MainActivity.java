@@ -14,13 +14,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         cardView=(CardView)findViewById(R.id.cardViewFull);
-        clicks(cardView);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ProfileUI.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
     }
 
-    public void clicks(View view){
-        Intent intent=new Intent(MainActivity.this,ProfileUI.class);
-        startActivity(intent);
-        finish();
-    }
+
 }
